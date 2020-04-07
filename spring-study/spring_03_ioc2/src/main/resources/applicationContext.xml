@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="beans1.xml"/>
+    <import resource="beans2.xml"/>
+    <import resource="beans3.xml"/>
+
+    <bean id="user" class="com.sandra.pojo.User">
+        <!--默认的无参构造方式-->
+        <!--<property name="name" value="sandra"/>-->
+
+        <!--有参构造方式（构造器构造方式）-->
+        <!--方式一：index = 参数下标-->
+        <!--<constructor-arg index="0" value="有参构造方式一"/>-->
+
+        <!--方式二：type = 类型；基本类型可直接用，引用类型必须写全限定名-->
+        <!--<constructor-arg type="com.lang.String" value="有参构造方式二"/>-->
+
+        <!--方式三：name = 属性名-->
+        <constructor-arg name="name" value="有参构造方式三"/>
+
+    </bean>
+
+    <!--
+    id：bean的唯一标识符，相当于我们创建的对象名
+    class：bean对象对应的全限定名，即包名+类型
+    name：也是别名，而且name可以同时取多个别名（可用逗号或分号或空格分割）
+    -->
+    <bean id="userT" class="com.sandra.pojo.UserT" name="userT1, userT2">
+        <property name="name" value="userT_name"/>
+    </bean>
+
+    <!--别名；在getBean获取时，通过name和alias中的值均可获取到该对象-->
+    <alias name="user" alias="userNew"/>
+
+
+</beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--指定要扫描的包，这个包下的注解就会生效；component-scan是扫描所有的组件-->
+    <context:component-scan base-package="com.sandra"/>
+
+    <!--注解驱动的设置；否则不可使用注解-->
+    <context:annotation-config/>
+
+    <!--这里用了component就不需要了-->
+    <!--<bean id="user" class="com.sandra.pojo.User"/>-->
+
+</beans>

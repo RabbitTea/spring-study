@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--
+    p命名空间注入，可以直接注入属性的值 = property
+    p:可以识别实体类中的属性，可以通过这种方式注入
+    -->
+    <bean id="userP" class="com.sandra.pojo.User" p:name="p标签" p:age="18"/>
+
+    <!--
+    c命名空间注入，可以直接注入构造器的属性值 = constructor-arg；
+    scope属性设置作用域，默认为singleton，即单例
+    -->
+    <bean id="userC" class="com.sandra.pojo.User" c:age="18" c:name="c标签"
+          scope="singleton"/>
+
+</beans>
